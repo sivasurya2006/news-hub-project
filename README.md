@@ -1,25 +1,32 @@
-NewsHub - React News Website
-NewsHub is a responsive news website built with React, Vite, HTML, CSS, and JavaScript. It fetches live articles from a news API and lets users browse latest headlines, filter by category, and search for specific topics.
+# NewsHub - React News Website
 
-Features
-Latest news section
-Category tabs for All, Technology, Business, Sports, Health, Entertainment, and Science
-Search news by keyword
-Reusable article card component
-Article image, title, description, source, published date, and read more link
-Loading skeleton cards
-Error handling with retry option
-Empty results state
-Responsive layout for desktop, tablet, and mobile
-API key loaded from .env
-Tech Stack
-React
-Vite
-HTML5
-CSS3
-JavaScript
-NewsAPI
-Project Structure
+NewsHub is a responsive React news website that allows users to browse the latest headlines, search for news articles, and filter articles by category. The application fetches real-time news data from the NewsAPI and displays articles in a clean, user-friendly interface.
+
+## Features
+
+- Browse latest news headlines
+- Search articles by keyword
+- Filter news by category
+- Categories include Technology, Business, Sports, Health, Entertainment, and Science
+- Reusable React components
+- Article cards with image, title, description, source, date, and read more link
+- Loading skeleton while fetching data
+- Error handling with retry option
+- Empty results message
+- Fully responsive design for desktop, tablet, and mobile
+
+## Tech Stack
+
+- React
+- Vite
+- JavaScript
+- HTML5
+- CSS3
+- NewsAPI
+
+## Project Structure
+
+```text
 src/
 ├── components/
 │   ├── Navbar.jsx
@@ -36,24 +43,34 @@ src/
 ├── App.jsx
 ├── main.jsx
 └── index.css
-Getting Started
+
+Installation
+Clone the repository:
+git clone https://github.com/your-username/news-website.git
+Navigate to the project folder:
+cd news-website
 Install dependencies:
-
 npm install
-Create a .env file in the project root:
-
-VITE_NEWS_API_KEY=your_news_api_key_here
+Environment Variables
+Create a .env file in the root directory and add your NewsAPI key:
+VITE_NEWS_API_KEY=your_newsapi_key_here
+You can get a NewsAPI key from:
+https://newsapi.org/register
+Run Locally
 Start the development server:
-
 npm run dev
-Build for production:
-
+Open the local URL shown in the terminal.
+Build
+Create a production build:
 npm run build
-API Key Safety
 
-Author:
-siva suriya.B
+Future Improvements
+- Add pagination
+- Add dark mode
+- Add bookmark/favorite articles
+- Add country-based filtering
+- Add article detail page
+- Add search history
 
-Do not hardcode your API key inside React components or service files. Keep it in .env, and make sure .env is ignored by Git.
-
-NewsAPI free developer keys commonly work on localhost. For public deployment, use a backend proxy if the API provider restricts browser requests.
+Author
+Siva Suriya.B
