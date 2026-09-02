@@ -1,11 +1,11 @@
-const API_KEY = import.meta.env.VITE_NEWS_API_KEY
+const API_KEY = import.meta.env.VITE_NEWSDATA_API_KEY || import.meta.env.VITE_NEWS_API_KEY
 const BASE_URL = 'https://newsdata.io/api/1'
 const DEFAULT_IMAGE =
   'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80'
 
 export async function fetchNews({ category = 'All', query = '' }) {
   if (!API_KEY) {
-    throw new Error('Missing API key. Add VITE_NEWS_API_KEY in your .env file')
+    throw new Error('Missing API key. Add VITE_NEWSDATA_API_KEY in your .env file')
   }
 
   const endpoint = 'news'
@@ -33,7 +33,15 @@ export async function fetchNews({ category = 'All', query = '' }) {
   const data = await response.json().catch(() => null)
 
   if (!response.ok || data?.status === 'error') {
-    throw new Error(data?.results?.message || data?.message || 'Failed to fetch news.')
+    const apiMessage = data?.results?.message || data?.message
+
+    if (apiMessage?.toLowerCase().includes('api key')) {
+      throw new Error(
+        'The NewsData.io API key is invalid. Check the key in your .env file or deployment environment variables.',
+      )
+    }
+
+    throw new Error(apiMessage || 'Failed to fetch news.')
   }
 
   return (data?.results || [])

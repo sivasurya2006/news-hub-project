@@ -22,7 +22,7 @@ NewsHub is a responsive news website built with React, Vite, HTML, CSS, and Java
 - HTML5
 - CSS3
 - JavaScript
-- NewsAPI
+- NewsData.io API
 
 ## Project Structure
 
@@ -56,7 +56,7 @@ npm install
 Create a `.env` file in the project root:
 
 ```env
-VITE_NEWS_API_KEY=your_news_api_key_here
+VITE_NEWSDATA_API_KEY=your_newsdata_api_key_here
 ```
 
 Start the development server:
@@ -75,4 +75,4 @@ npm run build
 
 Do not hardcode your API key inside React components or service files. Keep it in `.env`, and make sure `.env` is ignored by Git.
 
-NewsAPI free developer keys commonly work on localhost. For public deployment, use a backend proxy if the API provider restricts browser requests.
+For deployment, add the same `VITE_NEWSDATA_API_KEY` variable in your hosting provider's environment variables and redeploy the project.
