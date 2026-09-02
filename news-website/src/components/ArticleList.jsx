@@ -13,7 +13,7 @@ function ArticleList({ articles }) {
   return (
     <section className="article-grid" aria-live="polite">
       {articles.map((article) => (
-        <ArticleCard article={article} key={article.url} />
+        <ArticleCard article={article} key={article.id} />
       ))}
     </section>
   )
