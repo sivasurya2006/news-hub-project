@@ -8,7 +8,7 @@ export async function fetchNews({ category = 'All', query = '' }) {
     throw new Error('Missing API key. Add VITE_NEWSDATA_API_KEY in your .env file')
   }
 
-  const endpoint = 'news'
+  const endpoint = 'latest'
   const params = new URLSearchParams({
     apikey: API_KEY,
     language: 'en',
